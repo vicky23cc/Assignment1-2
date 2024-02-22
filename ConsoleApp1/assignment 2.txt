@@ -1,0 +1,17 @@
+﻿1. When to use String vs. StringBuilder in C# ?
+String cannot change, stringbuilder can change. so if we build some valuable like employee name we could use string, since usually it will not need change.
+
+2. What is the base class for all arrays in C#?
+System.Array
+
+3. How do you sort an array in C#?
+Arry.Sort()
+
+4. What property of an array object can be used to get the total number of elements in an array?
+Length
+
+5. Can you store multiple data types in System.Array?
+yes
+
+6. What’s the difference between the System.Array.CopyTo() and System.Array.Clone()?
+when using System.Array.Clone(), we are creating a independent copt of the array where change to one array do not affect the other.

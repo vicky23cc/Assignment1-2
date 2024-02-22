@@ -1,0 +1,104 @@
+﻿1. What type would you choose for the following “numbers”?
+A person’s telephone number -- string, because it might contain "-,()"
+A person’s height -- float
+A person’s age -- int
+A person’s gender (Male, Female, Prefer Not To Answer) -- string
+A person’s salary -- decimal
+A book’s ISBN -- string, because it might contain "-"
+A book’s price -- deciaml
+A book’s shipping weight -- float
+A country’s population -- double
+The number of stars in the universe -- long
+The number of employees in each of the small or medium businesses in the United Kingdom (up to about 50,000 employees per business) -- int
+
+
+2. What are the difference between value type and reference type variables? What is boxing and unboxing?
+value type : 1. directly contain their data; 2. each has its own copy of data; 3. operation on one cannot effect another
+reference type: 1. store reference to their data(object); 2. two reference variable can reference the same object; 3. operation on one can effect another
+
+boxing: process of converting a value type (such as int, float, double, etc.) to an object type (such as System.Object). 
+When a value type is boxed, it is wrapped in an object, allowing it to be treated as a reference type. 
+This is necessary when you need to treat a value type as an object, such as when adding it to a collection like ArrayList or 
+when passing it as a parameter to a method that expects an object.
+e.g. int i = 2; object j = i // boxing int i to object j
+
+unboxing: process of converting an object type back to a value type. When you retrieve a value type from an object, you need to unbox
+it to access its value. Unboxing involves extracting the value from the object and assigning it back to a value type variable.
+e.g. object j  = 2; int i = (int)j // unbox object j to int i
+
+3. What is meant by the terms managed resource and unmanaged resource in .NET
+managed resource: Managed resources are objects that are managed by the .NET runtime's garbage collector.
+These resources are typically instances of classes in the .NET Framework, and their memory allocation and deallocation are handled 
+automatically by the garbage collector.
+Examples of managed resources include objects like instances of classes from the .NET Framework such as FileStream, SqlConnection, 
+StreamReader, etc.
+The .NET runtime automatically cleans up managed resources when they are no longer needed by invoking the object's finalizer 
+(if one exists) and releasing its memory.
+
+unmanaged resouce: Unmanaged resources are resources that are not managed by the .NET runtime's garbage collector.
+These resources typically involve external entities such as file handles, database connections, COM objects, etc., 
+which are allocated outside of the .NET runtime's control.
+
+4. Whats the purpose of Garbage Collector in .NET?
+The garbage collector manages the allocation and release of memory for an application. For developers working with managed code, 
+this means that you don't have to write code to perform memory management tasks. Automatic memory management can eliminate common 
+problems, such as forgetting to free an object and causing a memory leak or attempting to access memory for an object that's already 
+been freed.
+
+1. What happens when you divide an int variable by 0?
+It will result in an error: "Error: Attempted to divide by zero."
+
+2. What happens when you divide a double variable by 0?
+a.If the numerator (the dividend) is a non-zero finite value and the denominator (the divisor) is zero, the result will be either 
+positive infinity or negative infinity, depending on the sign of the numerator.
+b.If both the numerator and the denominator are zero, the result will be NaN (Not-a-Number).
+
+3. What happens when you overflow an int variable, that is, set it to a value beyond its range?
+if an overflow occurs during an arithmetic operation, an OverflowException is thrown.
+
+4. What is the difference between x = y++; and x = ++y;?
+x = y++;: Post-increment, assigns the current value of y to x and then increments y.
+x = ++y;: Pre-increment, increments y first and then assigns the updated value of y to x.
+
+5. What is the difference between break, continue, and return when used inside a loop statement?
+break:
+. When break is encountered inside a loop, it immediately terminates the loop and transfers control to the statement immediately
+following the loop.
+. It effectively "breaks out" of the loop, regardless of the loop's condition.
+. After encountering a break statement, no further iterations of the loop are executed.
+
+continue:
+. When continue is encountered inside a loop, it skips the rest of the current iteration of the loop and proceeds to the next 
+iteration (if any).
+. It effectively "continues" to the next iteration of the loop without executing the remaining statements in the current iteration.
+. Subsequent iterations of the loop are not affected; they continue as usual.
+
+return:
+.return is not specific to loops but is used to exit a method (or function) and return a value (if applicable) to the caller.
+.When return is encountered inside a loop, it exits not only the loop but also the entire method (or function) containing the loop.
+.It immediately transfers control back to the calling code, and subsequent code in the method (or function) is not executed.
+
+
+6. What are the three parts of a for statement and which of them are required?
+Initialization: This part initializes one or more variables, usually used as loop counters. It is executed once before the loop 
+begins.
+Condition: This part defines the condition for continuing the loop. It is evaluated before each iteration, and if it evaluates to 
+true, the loop continues; otherwise, the loop terminates.
+Increment/Decrement: This part updates the loop control variable(s). It is executed after each iteration of the loop.
+
+Initialization and condition is required.
+
+7. What is the difference between the = and == operators?
+"=" is assigning a value, for example, a = 2 is assiging 2 to variable a
+"==" is Equality Operator. for example a == b will cheeck whether a equal to b or not and return true or false
+
+8. Does the following statement compile? for ( ; true; ) ;
+yes, because it contail the three part of for loop, it would be a inifinite loop.
+
+9. What does the underscore _ represent in a switch expression?
+_ can be used as a discard symbol within a switch expression. It serves as a placeholder for a case that is intentionally ignored 
+or for which no specific action is taken.
+
+10. What interface must an object implement to be enumerated over by using the foreach statement?
+
+In C#, an object must implement the IEnumerable or IEnumerable<T> interface to be enumerated over using the foreach statement.
